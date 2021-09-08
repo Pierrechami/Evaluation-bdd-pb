@@ -251,8 +251,9 @@ JOIN Administrator ON Infos.id_administrator = Administrator.id ;
 
 
 
+
 -- Utilisation d'un utilitaire de sauvegarde de la base de données 
 mysqldump -u root -p root -h localhost:8889 > evaluation.sql
 
---Utilisation d'un utilitaire de restauration de la base de données
-mysql reservation_place_cinema < evaluation.sql
+--Utilisation d'un utilitaire de restauration de la base de données (je ne recrée pas la base de données, car le serveur la comportait déjà)
+mysql -h localhost:8889 -u root -p root reservation_place_cinema < evaluation.sql
